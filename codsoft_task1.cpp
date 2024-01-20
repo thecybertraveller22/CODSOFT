@@ -48,7 +48,6 @@ public:
             cout << "Enter your guess: ";
             cin >> userguess;
 
-            // add a while loop to check for non integer inputs
             while (userguess < 0 || userguess >= 11)
             {
                 cout << "In-Valid input" << endl;
