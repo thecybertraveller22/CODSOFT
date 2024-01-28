@@ -36,6 +36,7 @@ public:
     void guess()
     {
         int userguess = 909090;
+        int count = 0;
 
         printBox();
         SetConsoleTextAttribute(hConsole, 3);
@@ -47,6 +48,7 @@ public:
             SetConsoleTextAttribute(hConsole, 12);
             cout << "Enter your guess: ";
             cin >> userguess;
+            count++;
 
             while (userguess < 0 || userguess >= 11)
             {
@@ -74,8 +76,9 @@ public:
             }
             else if (number == userguess)
             {
-                cout << "Congratulations! You guessed the correct number: " << number << endl;
+                cout << "Congratulations! You guessed the correct number: " << number << " in " << count << " tries " << endl;
                 cout << "Thank you for playing this game. Goodbye!" << endl;
+                Sleep(2000);
             }
 
             this_thread::sleep_for(chrono::seconds(2));
